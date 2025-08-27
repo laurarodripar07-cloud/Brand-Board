@@ -43,9 +43,9 @@
         Mi Brand Board
       </h2>
       <!-- Contenedor para la imagen -->
-      <div class="w-full h-80 rounded-2xl flex items-center justify-center overflow-hidden">
+      <div class="w-full h-80 rounded-2xl flex items-center justify-center overflow-hidden cursor-pointer" onclick="openModal('https://i.pinimg.com/736x/53/8d/b8/538db8d9c9761fe7ed36b838926e666a.jpg')">
         <!-- Imagen de tu Brand Board -->
-        <img src="https://photos.fife.usercontent.google.com/pw/AP1GczPGF1FCaG7AauVGdghI0oTU9_LIaS_rn48gAI7U1xYzXoJuxtE6dL4=w391-h220-no?authuser=3" alt="Mi Brand Board" class="w-full h-full object-cover rounded-2xl">
+        <img src="https://i.pinimg.com/736x/53/8d/b8/538db8d9c9761fe7ed36b838926e666a.jpg" alt="Mi Brand Board" class="w-full h-full object-cover rounded-2xl">
       </div>
     </div>
 
@@ -56,11 +56,56 @@
         El Brand Board de Adidas
       </h2>
       <!-- Contenedor para la imagen -->
-      <div class="w-full h-80 rounded-2xl flex items-center justify-center overflow-hidden">
-        <!-- Imagen de la marca -->
-        <img src="https://photos.fife.usercontent.google.com/pw/AP1GczPGF1FCaG7AauVGdghI0oTU9_LIaS_rn48gAI7U1xYzXoJuxtE6dL4=w391-h220-no?authuser=3" alt="Brand board de la marca" class="w-full h-full object-cover rounded-2xl">
+      <div class="w-full h-80 rounded-2xl flex items-center justify-center overflow-hidden cursor-pointer" onclick="openModal('https://i.pinimg.com/736x/1e/64/be/1e64be852cd8c2c8637f5e5469ce68dd.jpg')">
+        <!-- Imagen de la marca Adidas -->
+        <img src="https://i.pinimg.com/736x/1e/64/be/1e64be852cd8c2c8637f5e5469ce68dd.jpg" alt="Brand board de Adidas" class="w-full h-full object-cover rounded-2xl">
       </div>
     </div>
 
   </main>
 </div>
+
+<!-- Modal para la imagen ampliada -->
+<div id="imageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 p-4" onclick="closeModal()">
+  <span class="absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer hover:text-gray-300" onclick="closeModal()">
+    &times;
+  </span>
+  <div class="relative max-w-5xl max-h-5xl w-full">
+    <img id="modalImage" class="rounded-lg shadow-lg max-w-full max-h-[80vh] mx-auto" alt="Zoomed image">
+  </div>
+</div>
+
+<script>
+  // Get the modal and the image inside it
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+
+  /**
+   * Opens the modal with the specified image.
+   * @param {string} src - The URL of the image to display.
+   */
+  function openModal(src) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modalImage.src = src;
+  }
+
+  /**
+   * Closes the modal.
+   * @param {Event} event - The event object.
+   */
+  function closeModal(event) {
+    // Prevent the event from bubbling up and closing the modal immediately
+    // when clicking on the image inside the modal.
+    if (event) {
+      event.stopPropagation();
+    }
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
+
+  // Add event listener to the modal image to prevent closing when clicked
+  modalImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+</script>
