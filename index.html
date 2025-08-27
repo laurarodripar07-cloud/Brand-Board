@@ -1,0 +1,66 @@
+<!-- Cargar la fuente Inter y Tailwind CSS -->
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!--
+  Configuración de Tailwind CSS para usar la fuente Inter
+-->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<!-- Contenedor principal con un fondo degradado vibrante -->
+<div class="font-sans min-h-screen py-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-gradient-to-br from-pink-200 via-yellow-100 to-purple-200">
+  <!-- Título principal con un degradado de texto moderno -->
+  <header class="text-center mb-10">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
+      Brand Board
+    </h1>
+    <!-- Subtítulo con un color de texto más oscuro para mayor legibilidad -->
+    <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-800">
+      En el marco de este ejercicio, llamaremos <strong>brand board</strong> a la representación
+      gráfica y visual de los elementos que conforman la identidad de una marca
+      (marca personal, marca comercial). Esto nos permite tanto identificar como
+      diferenciar a la marca de otras en el mercado.
+    </p>
+  </header>
+
+  <!-- Contenedor principal para las tarjetas, con un diseño de cuadrícula -->
+  <main class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+
+    <!-- Primera tarjeta: "Mi Brand Board" -->
+    <!-- Agregado un efecto de transición y escala al pasar el cursor -->
+    <div class="bg-white p-6 sm:p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl hover:shadow-pink-300/50">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 text-center">
+        Mi Brand Board
+      </h2>
+      <!-- Contenedor para la imagen -->
+      <div class="w-full h-80 rounded-2xl flex items-center justify-center overflow-hidden">
+        <!-- Imagen de tu Brand Board -->
+        <img src="https://photos.fife.usercontent.google.com/pw/AP1GczPGF1FCaG7AauVGdghI0oTU9_LIaS_rn48gAI7U1xYzXoJuxtE6dL4=w391-h220-no?authuser=3" alt="Mi Brand Board" class="w-full h-full object-cover rounded-2xl">
+      </div>
+    </div>
+
+    <!-- Segunda tarjeta: "El Brand Board de [Nombre de la Marca]" -->
+    <!-- Agregado el mismo efecto de transición al pasar el cursor -->
+    <div class="bg-white p-6 sm:p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl hover:shadow-purple-300/50">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 text-center">
+        El Brand Board de Adidas
+      </h2>
+      <!-- Contenedor para la imagen -->
+      <div class="w-full h-80 rounded-2xl flex items-center justify-center overflow-hidden">
+        <!-- Imagen de la marca -->
+        <img src="https://photos.fife.usercontent.google.com/pw/AP1GczPGF1FCaG7AauVGdghI0oTU9_LIaS_rn48gAI7U1xYzXoJuxtE6dL4=w391-h220-no?authuser=3" alt="Brand board de la marca" class="w-full h-full object-cover rounded-2xl">
+      </div>
+    </div>
+
+  </main>
+</div>
